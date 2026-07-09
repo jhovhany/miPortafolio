@@ -7,6 +7,16 @@
     <meta name="description" content="Portafolio profesional de Jhovhany Villela - Desarrollador Web">
     <meta name="keywords" content="desarrollo web, HTML, PHP, JavaScript, Node, Vue, MySQL">
     <link rel="shortcut icon" href="./images/code.png">
+    <script>
+      (function () {
+        try {
+          var storedTheme = localStorage.getItem('portfolio-theme');
+          document.documentElement.dataset.theme = storedTheme === 'day' || storedTheme === 'night' ? storedTheme : 'night';
+        } catch (error) {
+          document.documentElement.dataset.theme = 'night';
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>

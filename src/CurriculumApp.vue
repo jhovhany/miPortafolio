@@ -1,4 +1,6 @@
 <script setup>
+import ThemeToggle from './ThemeToggle.vue';
+
 import curriculumPdf from '../docs/CV_Jhovhany_DW.pdf';
 </script>
 
@@ -15,7 +17,10 @@ import curriculumPdf from '../docs/CV_Jhovhany_DW.pdf';
         <a href="generic.html" aria-current="page">Curriculum</a>
       </nav>
 
-      <a class="header-action" :href="curriculumPdf" download>Descargar</a>
+      <div class="header-controls">
+        <ThemeToggle />
+        <a class="header-action" :href="curriculumPdf" download>Descargar</a>
+      </div>
     </header>
 
     <main class="cv-page section-pad">

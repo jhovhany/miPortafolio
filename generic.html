@@ -5,6 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="./images/code.png">
+    <script>
+      (function () {
+        try {
+          var storedTheme = localStorage.getItem('portfolio-theme');
+          document.documentElement.dataset.theme = storedTheme === 'day' || storedTheme === 'night' ? storedTheme : 'night';
+        } catch (error) {
+          document.documentElement.dataset.theme = 'night';
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="cv-app"></div>

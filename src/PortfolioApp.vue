@@ -1,4 +1,6 @@
 <script setup>
+import ThemeToggle from './ThemeToggle.vue';
+
 import dashboardImage from '../images/dashboard_green.png';
 import folletoImage from '../images/folleto.png';
 import picImage from '../images/pic01.jpg';
@@ -118,7 +120,10 @@ const socialLinks = [
         <a v-for="item in navItems" :key="item.href" :href="item.href">{{ item.label }}</a>
       </nav>
 
-      <a class="header-action" href="generic.html">Ver CV</a>
+      <div class="header-controls">
+        <ThemeToggle />
+        <a class="header-action" href="generic.html">Ver CV</a>
+      </div>
     </header>
 
     <main>
