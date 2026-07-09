@@ -2,6 +2,15 @@
 
 ## Vue 3
 
+Versión recomendada de Node.js: `22` o superior.
+
+Si usas `nvm`:
+
+```bash
+nvm install
+nvm use
+```
+
 Instalar dependencias:
 
 ```bash
