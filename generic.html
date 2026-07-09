@@ -9,9 +9,16 @@
       (function () {
         try {
           var storedTheme = localStorage.getItem('portfolio-theme');
+          var storedLanguage = localStorage.getItem('portfolio-language');
+          var language = storedLanguage === 'en' || storedLanguage === 'es' ? storedLanguage : 'es';
+
           document.documentElement.dataset.theme = storedTheme === 'day' || storedTheme === 'night' ? storedTheme : 'night';
+          document.documentElement.dataset.language = language;
+          document.documentElement.lang = language;
         } catch (error) {
           document.documentElement.dataset.theme = 'night';
+          document.documentElement.dataset.language = 'es';
+          document.documentElement.lang = 'es';
         }
       })();
     </script>

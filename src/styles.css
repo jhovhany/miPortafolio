@@ -229,6 +229,71 @@ h2 {
   min-width: max-content;
 }
 
+.language-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 5px 12px 5px 14px;
+  border: 1px solid var(--toggle-border);
+  border-radius: 999px;
+  color: var(--brand-text);
+  background: var(--toggle-bg);
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.language-select:hover {
+  transform: translateY(-2px);
+}
+
+.language-select:focus-within {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.language-select-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.language-select-control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.language-select-control::after {
+  position: absolute;
+  right: 1px;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  content: '';
+  pointer-events: none;
+  transform: rotate(45deg) translateY(-2px);
+}
+
+.language-select select {
+  width: 46px;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  background: transparent;
+  appearance: none;
+  outline: 0;
+}
+
+.language-select option {
+  color: #08213d;
+  background: #f7fcff;
+}
+
 .top-nav a,
 .header-action {
   border-radius: 999px;
@@ -790,6 +855,11 @@ h2 {
     padding-left: 6px;
   }
 
+  .language-select {
+    padding-left: 10px;
+  }
+
+  .language-select-label,
   .theme-toggle-label {
     display: none;
   }

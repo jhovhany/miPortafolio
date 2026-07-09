@@ -1,9 +1,11 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
+import { useTranslations } from './i18n';
 
 const STORAGE_KEY = 'portfolio-theme';
 const currentTheme = ref(document.documentElement.dataset.theme === 'day' ? 'day' : 'night');
 const isNight = computed(() => currentTheme.value === 'night');
+const { t } = useTranslations();
 
 function applyTheme(theme) {
   currentTheme.value = theme;
@@ -39,10 +41,10 @@ onMounted(() => {
     type="button"
     role="switch"
     :aria-checked="isNight"
-    :aria-label="isNight ? 'Desactivar modo nocturno' : 'Activar modo nocturno'"
+    :aria-label="isNight ? t.controls.theme.disableNight : t.controls.theme.enableNight"
     @click="toggleTheme"
   >
-    <span class="theme-toggle-label">{{ isNight ? 'Nocturno' : 'Claro' }}</span>
+    <span class="theme-toggle-label">{{ isNight ? t.controls.theme.night : t.controls.theme.light }}</span>
     <span class="theme-toggle-track" aria-hidden="true">
       <span class="theme-toggle-thumb"></span>
     </span>
