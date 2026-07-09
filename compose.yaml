@@ -1,0 +1,7 @@
+services:
+  portafolio:
+    build: .
+    image: miportafolio:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
