@@ -8,6 +8,7 @@ import dashboardImage from '../images/dashboard_green.png';
 import folletoImage from '../images/folleto.png';
 import picImage from '../images/pic01.jpg';
 import preescolarImage from '../images/preescolar.png';
+import jhovhanyImage from '/jhovhany.jpg';
 
 const { t } = useTranslations();
 const copy = computed(() => t.value.portfolio);
@@ -88,6 +89,7 @@ watchEffect(() => {
             <span class="profile-kicker">{{ copy.profile.kicker }}</span>
             <h2>{{ copy.profile.title }}</h2>
             <p>{{ copy.profile.description }}</p>
+            <img :src="jhovhanyImage" alt="Jhovhany Villela" class="profile-image">
           </div>
 
           <div class="stats-grid">
