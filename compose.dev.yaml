@@ -1,0 +1,15 @@
+services:
+  portafolio-dev:
+    image: node:22-alpine
+    working_dir: /app
+    # Mount source — node_modules lives only inside the container
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+    # Install deps if needed, then start Vite dev server with HMR
+    command: sh -c "npm install && npm run dev"
+    restart: unless-stopped

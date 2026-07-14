@@ -2,6 +2,7 @@
 import { computed, watchEffect } from 'vue';
 import LanguageSelector from './LanguageSelector.vue';
 import ThemeToggle from './ThemeToggle.vue';
+import LoadingScreen from './LoadingScreen.vue';
 import { useTranslations } from './i18n';
 
 import dashboardImage from '../images/dashboard_green.png';
@@ -49,6 +50,7 @@ watchEffect(() => {
 </script>
 
 <template>
+  <LoadingScreen />
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="#inicio" :aria-label="copy.brandAria">
